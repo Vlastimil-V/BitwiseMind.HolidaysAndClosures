@@ -1,0 +1,30 @@
+services:
+# REDIS
+  redis:
+    image: redis/redis-stack-server:latest
+    container_name: redis
+    hostname: ${REDIS_HOSTNAME}
+    restart: always
+    ports:
+      - 6379:6379
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - "${TEMP}\\redis-data:/var/lib/redis"
+      - "${TEMP}\\redis.conf:/usr/local/etc/redis/redis.conf"
+# REDIS-INSIGHT
+  redisinsight:
+    image: redislabs/redisinsight:latest
+    container_name: redis-insight
+    hostname: ${REDIS_INSIGHT_HOSTNAME}
+    restart: always
+    depends_on:
+      - redis
+    ports:
+      - 5540:5540
+    volumes:
+      - "${TEMP}\\redis-insight:/data"
+networks:
+  default:
+    name: ${COMPOSE_PROJECT_NAME}
+    external: false

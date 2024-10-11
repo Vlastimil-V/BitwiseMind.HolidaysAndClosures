@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <!-- General Project Settings -->
+  <PropertyGroup Label="General">
+    <!-- Target framework -->
+    <TargetFramework>net8.0</TargetFramework>
+
+    <!-- Enable nullable reference types -->
+    <Nullable>enable</Nullable>
+
+    <!-- Enable implicit usings -->
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- Build Quality Settings -->
+  <PropertyGroup Label="BuildQuality">
+    <!-- Treat warnings as errors -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1605</WarningsAsErrors> <!-- Example of treating specific warnings as errors -->
+
+    <!-- Disable warning for missing XML documentation -->
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <!-- Company Information -->
+  <PropertyGroup Label="CompanyInfo">
+    <!-- Company and copyright information -->
+    <Company>BitwiseMind Inc.</Company>
+    <Copyright>Copyright © BitwiseMind Inc. 2024</Copyright>
+  </PropertyGroup>
+</Project>

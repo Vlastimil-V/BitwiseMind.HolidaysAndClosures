@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "BitwiseMind.HolidaysAndClosures.App": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
